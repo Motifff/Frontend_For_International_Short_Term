@@ -21,7 +21,7 @@ function Insert(props) {
                             position:"absolute",
                             top: 0,
                             width: props.w,
-                            height: "10vh",
+                            height: "6vh",
                             background:"blue",
                             opacity:0
                         }}
@@ -36,9 +36,9 @@ function Insert(props) {
 
     const listRender = (a) => {
         let pa = a.split("");
-        let max = props.w.replace("vw","");
-        max = parseInt(max)/pa.length;
-        max = max+"vw";
+        //let max = props.w.replace("vh","");
+        let max = window.innerHeight*0.201/pa.length;
+        //max = max+"vh";
         let rdr = pa.map((item, key) => {return(<Charactor w={item} max={max}/>)})
         return(rdr);
     }
@@ -52,7 +52,7 @@ function Insert(props) {
             <div
                 style={{
                     width: props.w,
-                    height: "10vh"
+                    height: "6vh"
                 }}
             >
                 <div
@@ -62,7 +62,7 @@ function Insert(props) {
                         alignItems:"end",
                         top: 0,
                         width: props.w,
-                        height: "10vh",
+                        height: "6vh",
                         background: "gray",
                         opacity:0.3,
                         fontSize:10,
@@ -76,11 +76,11 @@ function Insert(props) {
             <div
                 style={{
                     width: props.w,
-                    height: "5vh"
+                    height: "2vh"
                 }}
             >
-                <div style={{ position: "absolute", left: "0px" }}>{props.A}</div>
-                <div style={{ position: "absolute", right: "0px" }}>{props.B}</div>
+                <div style={{ position: "absolute", left: "0px" ,bottom:"0px",fontSize:"1vh"}}>{props.A}</div>
+                <div style={{ position: "absolute", right: "0px" ,bottom:"0px",fontSize:"1vh"}}>{props.B}</div>
             </div>
         </div>
     )

@@ -4,10 +4,10 @@ import { useSpring, animated ,config} from "@react-spring/web";
 function Cha(props){
     const TextSize = useSpring({
         from:{
-            fontSize:props.s===true?props.max:"3vw"
+            fontSize:props.s===true?props.max:window.innerHeight*0.03
         },
         to:{
-            fontSize:props.s===false?"3vw":props.max
+            fontSize:props.s===false?window.innerHeight*0.03:props.max
         }
     })
 
